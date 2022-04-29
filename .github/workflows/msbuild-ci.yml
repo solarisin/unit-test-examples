@@ -13,10 +13,6 @@ env:
   # Path to the solution file relative to the root of the project.
   SOLUTION_FOLDER: ./microsoft-cpp/cpp-unit-test-simple-dll/
 
-  # Configuration types and platforms to build.
-  BUILD_CONFIGURATIONS: '[Release]'
-  BUILD_PLATFORMS: '[x64, x86]'
-
 permissions:
   contents: read
 
@@ -26,8 +22,8 @@ jobs:
 
     strategy:
       matrix:
-        configuration: ${{env.BUILD_CONFIGURATIONS}}
-        platform: ${{env.BUILD_PLATFORMS}}
+        configuration: [Release]
+        platform: [x64, x86]
 
     steps:
     - uses: actions/checkout@v3
