@@ -79,38 +79,38 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(IncludePath)</IncludePath>
-    <OutDir>$(ProjectDir)bin\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(ProjectDir)obj\$(Configuration)\$(Platform)\</IntDir>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\$(PlatformShortName)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Configuration)\$(PlatformShortName)\</IntDir>
     <LibraryPath>$(LibraryPath)</LibraryPath>
     <CopyLocalProjectReference>true</CopyLocalProjectReference>
-    <CopyLocalDebugSymbols>true</CopyLocalDebugSymbols>
-    <CopyCppRuntimeToOutputDir>true</CopyCppRuntimeToOutputDir>
+    <CopyLocalDebugSymbols>false</CopyLocalDebugSymbols>
+    <CopyCppRuntimeToOutputDir>false</CopyCppRuntimeToOutputDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <OutDir>$(ProjectDir)bin\$(Configuration)\$(Platform)\</OutDir>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\$(PlatformShortName)\</OutDir>
     <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
-    <IntDir>$(ProjectDir)obj\$(Configuration)\$(Platform)\</IntDir>
+    <IntDir>$(ProjectDir)obj\$(Configuration)\$(PlatformShortName)\</IntDir>
     <CopyLocalProjectReference>true</CopyLocalProjectReference>
-    <CopyLocalDebugSymbols>true</CopyLocalDebugSymbols>
-    <CopyCppRuntimeToOutputDir>true</CopyCppRuntimeToOutputDir>
+    <CopyLocalDebugSymbols>false</CopyLocalDebugSymbols>
+    <CopyCppRuntimeToOutputDir>false</CopyCppRuntimeToOutputDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)bin\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(ProjectDir)obj\$(Configuration)\$(Platform)\</IntDir>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\$(PlatformShortName)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Configuration)\$(PlatformShortName)\</IntDir>
     <CopyLocalProjectReference>true</CopyLocalProjectReference>
-    <CopyLocalDebugSymbols>true</CopyLocalDebugSymbols>
-    <CopyCppRuntimeToOutputDir>true</CopyCppRuntimeToOutputDir>
+    <CopyLocalDebugSymbols>false</CopyLocalDebugSymbols>
+    <CopyCppRuntimeToOutputDir>false</CopyCppRuntimeToOutputDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)bin\$(Configuration)\$(Platform)\</OutDir>
-    <IntDir>$(ProjectDir)obj\$(Configuration)\$(Platform)\</IntDir>
+    <OutDir>$(ProjectDir)bin\$(Configuration)\$(PlatformShortName)\</OutDir>
+    <IntDir>$(ProjectDir)obj\$(Configuration)\$(PlatformShortName)\</IntDir>
     <CopyLocalProjectReference>true</CopyLocalProjectReference>
-    <CopyLocalDebugSymbols>true</CopyLocalDebugSymbols>
-    <CopyCppRuntimeToOutputDir>true</CopyCppRuntimeToOutputDir>
+    <CopyLocalDebugSymbols>false</CopyLocalDebugSymbols>
+    <CopyCppRuntimeToOutputDir>false</CopyCppRuntimeToOutputDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
