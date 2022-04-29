@@ -1,4 +1,4 @@
-name: MSBuild and Test
+name: msbuild-vstest-ci
 
 on:
   push:
