@@ -14,8 +14,8 @@ env:
   SOLUTION_FOLDER: ./microsoft-cpp/cpp-unit-test-simple-dll/
 
   # Configuration types and platforms to build.
-  BUILD_CONFIGURATIONS: [Release]
-  BUILD_PLATFORMS: [x64, x86]
+  BUILD_CONFIGURATIONS: '[Release]'
+  BUILD_PLATFORMS: '[x64, x86]'
 
 permissions:
   contents: read
