@@ -26,7 +26,8 @@ jobs:
         platform: [x64, x86]
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
@@ -48,7 +49,7 @@ jobs:
       run: powershell Expand-Archive -Path tests.zip -DestinationPath ./
 
     - name: Run tests
-      uses: microsoft-approved-actions/vstest@master
+      uses: microsoft-approved-actions/vstest@main
       with:
         testAssembly: '**\\*test*.dll\n!**\\*TestAdapter.dll\n!**\\obj\\**'
         searchFolder: ${{env.SOLUTION_FOLDER}}test/
