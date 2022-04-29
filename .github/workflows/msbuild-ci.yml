@@ -1,0 +1,58 @@
+name: MSBuild and Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+env:
+  # Path to the solution file relative to the root of the project.
+  SOLUTION_FOLDER: ./microsoft-cpp/cpp-unit-test-simple-dll/
+
+  # Configuration types and platforms to build.
+  BUILD_CONFIGURATIONS: [Release]
+  BUILD_PLATFORMS: [x64, x86]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        configuration: ${{env.BUILD_CONFIGURATIONS}}
+        platform: ${{env.BUILD_PLATFORMS}}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Restore NuGet packages
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: nuget restore ${{env.SOLUTION_FOLDER}}
+
+    - name: MSBuild
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      # Add additional options to the MSBuild command line here (like platform or verbosity level).
+      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
+      run: msbuild /m /p:Configuration=${{matrix.configuration}} /p:Platform=${{matrix.platform}} ${{env.SOLUTION_FOLDER}}
+
+    - name: Download tests binary zip
+      run: powershell Invoke-WebRequest -Uri "https://localworker.blob.core.windows.net/win-x64/tests.zip" -OutFile "./tests.zip"
+
+    - name: Unzip tests binary
+      run: powershell Expand-Archive -Path tests.zip -DestinationPath ./
+
+    - name: Run tests
+      uses: microsoft-approved-actions/vstest@master
+      with:
+        testAssembly: '**\\*test*.dll\n!**\\*TestAdapter.dll\n!**\\obj\\**'
+        searchFolder: ${{env.SOLUTION_FOLDER}}test/
