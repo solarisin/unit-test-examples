@@ -203,6 +203,9 @@
       <Project>{c5b92035-ae67-44ea-92bd-bb987afe44cf}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="simple-dll-test.runsettings" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

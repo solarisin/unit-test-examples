@@ -21,4 +21,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="simple-dll-test.runsettings" />
+  </ItemGroup>
 </Project>

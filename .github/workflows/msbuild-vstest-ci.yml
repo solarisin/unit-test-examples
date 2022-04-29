@@ -52,6 +52,8 @@ jobs:
       with:
         testAssembly: '*-test.dll'
         searchFolder: ${{env.SOLUTION_FOLDER}}test/simple-dll-test/bin/${{matrix.configuration}}/${{matrix.platform}}/
+        codeCoverageEnabled: true
+        runSettingsFile: ${{env.SOLUTION_FOLDER}}test/simple-dll-test/simple-dll-test.runsettings
         
     # Parse trx files
     - name: Parse Trx files
