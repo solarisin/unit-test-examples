@@ -23,8 +23,8 @@ jobs:
 
     strategy:
       matrix:
-        configuration: [Debug, Release]
-        platform: [x64, x86]
+        configuration: [Release] # [Release, Debug]
+        platform: [x64] # [x64, x86]
 
     steps:
     - name: Print the test output folder
@@ -37,17 +37,27 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Restore NuGet packages
-      working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FOLDER}}
 
+    # execute msbuild for the specified configuration and platform
     - name: MSBuild
-      working-directory: ${{env.GITHUB_WORKSPACE}}
       # Add additional options to the MSBuild command line here (like platform or verbosity level).
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{matrix.configuration}} /p:Platform=${{matrix.platform}} ${{env.SOLUTION_FOLDER}}
 
+    # run vstest on all generated test dlls
     - name: Run tests
       uses: microsoft/vstest-action@v0.1.0
+      id: vstest
       with:
         testAssembly: '*-test.dll'
         searchFolder: ${{env.TEST_OUTPUT_FOLDER}}${{matrix.configuration}}/${{matrix.platform}}/
+        resultsDirectory: ${{env.TEST_OUTPUT_FOLDER}}${{matrix.configuration}}/${{matrix.platform}}/test-results
+        
+    # Parse trx files
+    - name: Parse Trx files
+      uses: NasAmin/trx-parser@v0.1
+      id: trx-parser
+      with:
+        TRX_PATH: ${{env.TEST_OUTPUT_FOLDER}}${{matrix.configuration}}/${{matrix.platform}}/test-results
+        REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
