@@ -18,7 +18,8 @@ permissions:
   
 jobs:
   build:
-    runs-on: windows-latest
+    #runs-on: windows-latest
+    runs-on: [self-hosted, windows, x64]
 
     strategy:
       matrix:
@@ -57,5 +58,5 @@ jobs:
       uses: NasAmin/trx-parser@v0.2.0
       id: trx-parser
       with:
-        TRX_PATH: ${{env.SOLUTION_FOLDER}}test/simple-dll-test/TestResults
+        TRX_PATH: ./TestResults
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
