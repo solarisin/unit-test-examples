@@ -199,9 +199,6 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="simple-dll-test.runsettings" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\src\simple-dll\simple-dll.vcxproj">
       <Project>{c5b92035-ae67-44ea-92bd-bb987afe44cf}</Project>
     </ProjectReference>
