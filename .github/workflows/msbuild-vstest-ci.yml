@@ -15,6 +15,7 @@ env:
 
 permissions:
   contents: read
+  checks: write
   
 jobs:
   build:
@@ -27,17 +28,16 @@ jobs:
         platform: [x64] # [x64, x86]
 
     steps:
-    - name: Print the test output folder
-      run: echo ${{env.SOLUTION_FOLDER}}test/simple-dll-test/bin/${{matrix.configuration}}/${{matrix.platform}}/
-
     - name: Checkout
       uses: actions/checkout@v3
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
 
-    - name: Restore NuGet packages
-      run: nuget restore ${{env.SOLUTION_FOLDER}}
+    # This takes forever on github hosted runners for some reason, even though this solution has no nuget packages
+    # disable for now
+    #- name: Restore NuGet packages
+    #  run: nuget restore ${{env.SOLUTION_FOLDER}}
 
     # execute msbuild for the specified configuration and platform
     - name: MSBuild
