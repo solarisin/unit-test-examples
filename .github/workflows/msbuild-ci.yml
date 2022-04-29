@@ -49,5 +49,5 @@ jobs:
     - name: Run tests
       uses: microsoft/vstest-action@v0.1.0
       with:
-        testAssembly: './*-test.dll'
+        testAssembly: '*-test.dll'
         searchFolder: ${{env.TEST_OUTPUT_FOLDER}}${{matrix.configuration}}/${{matrix.platform}}/
