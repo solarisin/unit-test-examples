@@ -49,7 +49,7 @@ jobs:
       run: powershell Expand-Archive -Path tests.zip -DestinationPath ./
 
     - name: Run tests
-      uses: microsoft-approved-actions/vstest-action@v0.1.0
+      uses: microsoft/vstest-action@v0.1.0
       with:
         testAssembly: '**\\*test*.dll\n!**\\*TestAdapter.dll\n!**\\obj\\**'
         searchFolder: ${{env.SOLUTION_FOLDER}}test/
