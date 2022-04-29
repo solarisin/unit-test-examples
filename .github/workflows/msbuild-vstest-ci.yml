@@ -12,7 +12,6 @@ on:
 env:
   # Path to the solution file relative to the root of the project.
   SOLUTION_FOLDER: ./microsoft-cpp/cpp-unit-test-simple-dll/
-  TEST_OUTPUT_FOLDER: ./microsoft-cpp/cpp-unit-test-simple-dll/test/simple-dll-test/bin/
 
 permissions:
   contents: read
@@ -28,7 +27,7 @@ jobs:
 
     steps:
     - name: Print the test output folder
-      run: echo ${{env.TEST_OUTPUT_FOLDER}}${{matrix.configuration}}/${{matrix.platform}}/
+      run: echo ${{env.SOLUTION_FOLDER}}test/simple-dll-test/bin/${{matrix.configuration}}/${{matrix.platform}}/
 
     - name: Checkout
       uses: actions/checkout@v3
@@ -51,13 +50,12 @@ jobs:
       id: vstest
       with:
         testAssembly: '*-test.dll'
-        searchFolder: ${{env.TEST_OUTPUT_FOLDER}}${{matrix.configuration}}/${{matrix.platform}}/
-        resultsDirectory: ${{env.TEST_OUTPUT_FOLDER}}${{matrix.configuration}}/${{matrix.platform}}/test-results
+        searchFolder: ${{env.SOLUTION_FOLDER}}test/simple-dll-test/bin/${{matrix.configuration}}/${{matrix.platform}}/
         
     # Parse trx files
     - name: Parse Trx files
       uses: NasAmin/trx-parser@v0.2.0
       id: trx-parser
       with:
-        TRX_PATH: ${{env.TEST_OUTPUT_FOLDER}}${{matrix.configuration}}/${{matrix.platform}}/test-results
+        TRX_PATH: ${{env.SOLUTION_FOLDER}}test/simple-dll-test/TestResults
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
