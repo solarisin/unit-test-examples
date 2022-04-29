@@ -1,4 +1,11 @@
-# unit-test-examples
+<h1 align="center">Example Unit Tests</h1>
+
+<p align="center">
+    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/solarisin/unit-test-examples/msbuild-vstest-ci?style=for-the-badge">
+    <img alt="Test Results" src="https://camo.githubusercontent.com/973cf56817f1101f3640b3223bc822bf7b1995a20f893b784bee044def4170b5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74657374732d2545322539432539342532303125323025453225394325393625323030253230254532253945253946253230302d627269676874677265656e3f7374796c653d666f722d7468652d6261646765">
+    <img alt="Conventional Commits" src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge">
+    <img alt="GitHub" src="https://img.shields.io/github/license/solarisin/unit-test-examples?style=for-the-badge">
+</p>
 
 ## Description
 
@@ -47,13 +54,6 @@ The last section of a high-quality README file is the license. This lets other d
 ---
 
 🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
 ## Features
 
