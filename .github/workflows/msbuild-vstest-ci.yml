@@ -56,8 +56,9 @@ jobs:
         
     # Parse trx files
     - name: Parse Trx files
-      uses: NasAmin/trx-parser@v0.2.0
+      uses: solarisin/trx-parser@main
       id: trx-parser
       with:
         TRX_PATH: ./TestResults
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BADGE_STYLE: emoji
