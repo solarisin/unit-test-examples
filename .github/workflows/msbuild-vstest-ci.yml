@@ -56,7 +56,7 @@ jobs:
         
     # Parse trx files
     - name: Parse Trx files
-      uses: solarisin/trx-parser@main
+      uses: solarisin/trx-parser@dev2
       id: trx-parser
       with:
         TRX_PATH: ./TestResults
