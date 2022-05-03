@@ -44,8 +44,8 @@ jobs:
       id: vstest
       with:
         testAssembly: '*-test.dll'
-        searchFolder: ${{env.SOLUTION_FOLDER}}test/ms-cpp-unit-test/bin/${{matrix.configuration}}/${{matrix.platform}}/
-        runSettingsFile: ${{env.SOLUTION_FOLDER}}test/ms-cpp-unit-test/ms-cpp-unit-test.runsettings
+        searchFolder: ${{env.SOLUTION_FOLDER}}/test/ms-cpp-unit-test/bin/${{matrix.configuration}}/${{matrix.platform}}/
+        runSettingsFile: ${{env.SOLUTION_FOLDER}}/test/ms-cpp-unit-test/ms-cpp-unit-test.runsettings
         
     # Parse trx files
     - name: Parse Trx files
