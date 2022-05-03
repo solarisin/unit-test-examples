@@ -7,7 +7,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace simple_dll_test
+namespace ms_cpp_unit_test
 {
 	TEST_CLASS(SimpleDllTest)
 	{

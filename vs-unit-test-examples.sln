@@ -5,20 +5,26 @@ VisualStudioVersion = 17.2.32414.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple-dll", "src\simple-dll\simple-dll.vcxproj", "{C5B92035-AE67-44EA-92BD-BB987AFE44CF}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "simple-dll-test", "test\simple-dll-test\simple-dll-test.vcxproj", "{847CBD64-1776-442E-8CE8-EBABED974696}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C85F9D3B-A278-4F7E-8C46-6332A0809AE2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B087E9F4-762A-4341-9D9E-5FA21A7F3736}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{3A423DB3-62AB-4942-8F8E-7FBBB83A8A2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{BCF05E35-30B7-41EC-A13D-EE62BE6ACFE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{40A51DBE-AAE4-4042-AF79-04642106B13B}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\.gitignore = ..\..\.gitignore
-		..\..\README.md = ..\..\README.md
+		.github\workflows\msbuild-vstest-ci.yml = .github\workflows\msbuild-vstest-ci.yml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{CD58056C-7FA2-4D75-BFE4-19B5978382B4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{02C5F0DF-4303-46F7-82D2-10888C3DDEA0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D342F5DC-AFDD-4525-87D3-D6EC462EC82A}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\.github\workflows\msbuild-vstest-ci.yml = ..\..\.github\workflows\msbuild-vstest-ci.yml
+		.gitignore = .gitignore
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ms-cpp-unit-test", "test\ms-cpp-unit-test\ms-cpp-unit-test.vcxproj", "{847CBD64-1776-442E-8CE8-EBABED974696}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,7 +55,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{02C5F0DF-4303-46F7-82D2-10888C3DDEA0} = {CD58056C-7FA2-4D75-BFE4-19B5978382B4}
+		{C5B92035-AE67-44EA-92BD-BB987AFE44CF} = {C85F9D3B-A278-4F7E-8C46-6332A0809AE2}
+		{40A51DBE-AAE4-4042-AF79-04642106B13B} = {BCF05E35-30B7-41EC-A13D-EE62BE6ACFE1}
+		{847CBD64-1776-442E-8CE8-EBABED974696} = {3A423DB3-62AB-4942-8F8E-7FBBB83A8A2A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49D6AF62-393B-4543-8065-26E81B9F38FA}

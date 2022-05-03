@@ -25,7 +25,7 @@
     <RootNamespace>codechefcpptest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectSubType>NativeUnitTestProject</ProjectSubType>
-    <ProjectName>simple-dll-test</ProjectName>
+    <ProjectName>ms-cpp-unit-test</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -204,7 +204,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="simple-dll-test.runsettings" />
+    <Text Include="ms-cpp-unit-test.runsettings" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -22,6 +22,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="simple-dll-test.runsettings" />
+    <Text Include="ms-cpp-unit-test.runsettings" />
   </ItemGroup>
 </Project>

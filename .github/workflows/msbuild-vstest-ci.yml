@@ -11,7 +11,7 @@ on:
   
 env:
   # Path to the solution file relative to the root of the project.
-  SOLUTION_FOLDER: ./microsoft-cpp/cpp-unit-test-simple-dll/
+  SOLUTION_FOLDER: .
 
 permissions:
   contents: read
@@ -34,15 +34,8 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
 
-    # This takes forever on github hosted runners for some reason, even though this solution has no nuget packages
-    # disable for now
-    #- name: Restore NuGet packages
-    #  run: nuget restore ${{env.SOLUTION_FOLDER}}
-
     # execute msbuild for the specified configuration and platform
     - name: MSBuild
-      # Add additional options to the MSBuild command line here (like platform or verbosity level).
-      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{matrix.configuration}} /p:Platform=${{matrix.platform}} ${{env.SOLUTION_FOLDER}}
 
     # run vstest on all generated test dlls
@@ -51,8 +44,8 @@ jobs:
       id: vstest
       with:
         testAssembly: '*-test.dll'
-        searchFolder: ${{env.SOLUTION_FOLDER}}test/simple-dll-test/bin/${{matrix.configuration}}/${{matrix.platform}}/
-        runSettingsFile: ${{env.SOLUTION_FOLDER}}test/simple-dll-test/simple-dll-test.runsettings
+        searchFolder: ${{env.SOLUTION_FOLDER}}/test/ms-cpp-unit-test/bin/${{matrix.configuration}}/${{matrix.platform}}/
+        runSettingsFile: ${{env.SOLUTION_FOLDER}}/test/ms-cpp-unit-test/ms-cpp-unit-test.runsettings
         
     # Parse trx files
     - name: Parse Trx files
