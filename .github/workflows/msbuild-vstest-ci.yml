@@ -32,7 +32,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@ab534842b4bdf384b8aaf93765dc6f721d9f5fab #v1.1.1 commit
 
     # execute msbuild for the specified configuration and platform
     - name: MSBuild
@@ -40,7 +40,7 @@ jobs:
 
     # run vstest on all generated test dlls
     - name: Run tests
-      uses: microsoft/vstest-action@v0.1.0
+      uses: microsoft/vstest-action@ec2a2a7a11ca2e761674de49ee8f3b641dd5fb97 #non-release commit
       id: vstest
       with:
         testAssembly: '*-test.dll'
